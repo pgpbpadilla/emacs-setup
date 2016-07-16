@@ -93,4 +93,7 @@
 (global-set-key "\M-n"  (lambda () (interactive) (scroll-up   4)) )
 (global-set-key "\M-p"  (lambda () (interactive) (scroll-down 4)) )
 
+;; Ansible mode
+(add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
+
 ;;; Init.el ends here
