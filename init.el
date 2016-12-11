@@ -28,6 +28,14 @@
 
 
 
+;; Projectile + Helm
+(require 'helm-config)
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(global-set-key (kbd "C-.") 'helm-imenu-anywhere)
+
+
 ;;; My own values for variables
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -52,11 +60,12 @@
  '(ns-command-modifier (quote meta))
  '(show-paren-mode t)
  '(tab-width 2)
- '(word-wrap nil))
+ '(word-wrap nil)
+ '(helm-mode t))
 
 ;;; make transparent
 (set-frame-parameter (selected-frame) 'alpha '(90 90))
-(set-face-attribute 'default nil :height 150)
+(set-face-attribute 'default nil :height 110)
 
 ;; auto-load js2-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -81,13 +90,6 @@
    '(progn
       (require 'tern-auto-complete)
       (tern-ac-setup)))
-
-;; Projectile + Helm
-(require 'helm-config)
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(helm-projectile-on)
-(global-set-key (kbd "C-.") 'helm-imenu-anywhere)
 
 ;; scrolling
 (global-set-key "\M-n"  (lambda () (interactive) (scroll-up   4)) )
