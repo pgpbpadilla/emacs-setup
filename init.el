@@ -98,4 +98,11 @@
 ;; Ansible mode
 (add-hook 'yaml-mode-hook '(lambda () (ansible 1)))
 
+
+;; AUCTeX
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+
 ;;; Init.el ends here
