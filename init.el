@@ -65,7 +65,7 @@
 
 ;;; make transparent
 (set-frame-parameter (selected-frame) 'alpha '(90 90))
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :height 140)
 
 ;; auto-load js2-mode
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
