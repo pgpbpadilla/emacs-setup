@@ -100,6 +100,8 @@
 
 
 ;; AUCTeX
+(setenv "PATH" "/usr/local/bin:/Library/TeX/texbin/:$PATH" t)
+(setq exec-path (append exec-path '("/Library/TeX/texbin")))
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
