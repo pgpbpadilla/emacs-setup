@@ -106,5 +106,26 @@
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
 
+(yas-global-mode 1)
+(add-to-list 'yas-snippet-dirs (locate-user-emacs-file "snippets"))
+
+
+(require 'real-auto-save)
+(add-hook 'prog-mode-hook 'real-auto-save-mode)
+(setq real-auto-save-interval 5) ;; in seconds
+
+;; Flyspell
+;; easy spell check
+(global-set-key (kbd "<f8>") 'ispell-word)
+(global-set-key (kbd "C-S-<f8>") 'flyspell-mode)
+(global-set-key (kbd "C-M-<f8>") 'flyspell-buffer)
+(global-set-key (kbd "C-<f8>") 'flyspell-check-previous-highlighted-word)
+(defun flyspell-check-next-highlighted-word ()
+  "Custom function to spell check next highlighted word"
+  (interactive)
+  (flyspell-goto-next-error)
+  (ispell-word)
+  )
+(global-set-key (kbd "M-<f8>") 'flyspell-check-next-highlighted-word)
 
 ;;; Init.el ends here
