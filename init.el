@@ -10,7 +10,7 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   )
 
-(setq my-package-list '(helm-projectile yaml-mode))
+(setq my-package-list '(helm-projectile yaml-mode json-mode))
 (mapc #'package-install my-package-list)
 
 ;; Save backups and temp files to a central location to avoid
