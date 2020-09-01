@@ -4,11 +4,9 @@
 ;;; Code:
 
 ;;; Enable MELPA packages
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  )
+;;; https://melpa.org/#/getting-started
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Save backups and temp files to a central location to avoid
 ;; certain tools (Grunt-watch) to show annoying ENOENT file because
